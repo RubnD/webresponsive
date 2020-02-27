@@ -1,3 +1,11 @@
+#fancy{
+	border-radius: 0.3em;
+	display: block;
+	margin: 1em auto;
+	padding: 0.3em;
+	width: 30%;
+}
+
 .caja{
 	align-items: center;
 	border: solid;
@@ -5,6 +13,9 @@
 	display: flex;
 	height: 400px;
 	justify-content: space-around;
+	margin: 0 auto;
+	width: 80%;
+
 }
 .caja div{
 	height: 250px;
@@ -21,5 +32,48 @@
 	background: salmon;
 }
 .cajitas3 img{
-	max-width:  100%;
+	max-width: 100%;
+}
+@media print{
+	#fancy, .cajitas1, .cajitas2{
+		display: none;
+	}
+	.caja .cajitas3{
+		width: 80%;
+	}
+}
+@keyframes vario{
+	0%{
+		background: tomato;
+	}
+	20%{
+		background: gold;
+		transform: rotate(45deg);
+	}
+	60%{
+		background: blue;
+	}
+	80%{
+		background: black;
+		border-radius: 50%;
+	}
+	100%{
+		background: green;
+	}
+}
+@media screen and (max-width: 550px){
+	#fancy{
+		width: 100%;
+	}
+	.caja{
+		flex-direction: column-reverse;
+		height: auto;
+		width: 100%;
+		}
+	.caja div{
+		width: 100%;
+	}
+	.caja .cajitas2{
+		animation: vario infinite 5s alternate;
+	}
 }
